@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quote App</title>
+  <style>
+    body {font-family: Arial; text-align:center; background:#222; color:#fff;}
+    .box {margin-top:100px;}
+    button {padding:10px 20px; font-size:16px; cursor:pointer;}
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2 id="quote">Click button</h2>
+  <p id="author"></p>
+  <button onclick="newQuote()">New Quote</button>
+</div>
+
+<script>
+let quotes = [
+  {text:"Success is not final", author:"Winston Churchill"},
+  {text:"Work hard in silence", author:"Ali"},
+  {text:"Never give up", author:"Unknown"}
+];
+
+function newQuote(){
+  let r = Math.floor(Math.random()*quotes.length);
+  document.getElementById("quote").innerText = quotes[r].text;
+  document.getElementById("author").innerText = "- " + quotes[r].author;
+}
+</script>
+
+</body>
+</html>

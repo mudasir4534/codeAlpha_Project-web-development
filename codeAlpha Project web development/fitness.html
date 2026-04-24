@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family:Arial; text-align:center;}
+input,button {padding:10px; margin:5px;}
+</style>
+</head>
+
+<body>
+
+<h2>Fitness Tracker</h2>
+
+<input type="number" id="steps" placeholder="Enter steps">
+<button onclick="save()">Save</button>
+
+<h3 id="result"></h3>
+
+<script>
+function save(){
+ let steps = document.getElementById("steps").value;
+ localStorage.setItem("steps", steps);
+ document.getElementById("result").innerText = "Saved Steps: " + steps;
+}
+
+window.onload = function(){
+ let s = localStorage.getItem("steps");
+ if(s){
+   document.getElementById("result").innerText = "Saved Steps: " + s;
+ }
+}
+</script>
+
+</body>
+</html>

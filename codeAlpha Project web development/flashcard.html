@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family:Arial; text-align:center;}
+.card {margin-top:100px;}
+button {padding:10px; margin:5px;}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2 id="q"></h2>
+<h3 id="a" style="display:none;"></h3>
+
+<button onclick="showAns()">Show Answer</button>
+<button onclick="next()">Next</button>
+</div>
+
+<script>
+let data = [
+ {q:"HTML kya hai?", a:"Markup Language"},
+ {q:"2+2?", a:"4"},
+ {q:"Pakistan capital?", a:"Islamabad"}
+];
+
+let i=0;
+
+function showAns(){
+ document.getElementById("a").style.display="block";
+}
+
+function next(){
+ i=(i+1)%data.length;
+ document.getElementById("q").innerText=data[i].q;
+ document.getElementById("a").innerText=data[i].a;
+ document.getElementById("a").style.display="none";
+}
+
+document.getElementById("q").innerText=data[0].q;
+document.getElementById("a").innerText=data[0].a;
+</script>
+
+</body>
+</html>
